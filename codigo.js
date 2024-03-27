@@ -6,14 +6,16 @@ let Tareas = [
     },*/
     /*{
         Nombre: "Lavar la ropa",
-        Check: true
+        Check: true,
+        TiempoCreado: Date.now(),
+        TiempoTerminado: null,
     }*/
 ]
 
 Agregar = () =>
 {
   let aux = document.getElementById("textoTarea").value;
-  Tareas.push({Nombre: aux,Check: false});
+  Tareas.push({Nombre: aux,Check: false,TiempoCreado: Date.now(),TiempoTerminado: null});
   MostrarHtml();
 }
 
@@ -23,6 +25,32 @@ deshabilitar = (aux,tarea,num) =>
     output.innerHTML="";
     output.innerHTML+=`<div id="cb${aux}"><li id="cb${aux}"style="text-decoration:line-through;color: gray;">${tarea}<input class="form-check-input" type="checkbox" id="flexCheckChecked " onclick="deshabilitar('${aux}',${tarea})" Checked disabled> </li></div>`
     Tareas[num].Check = true; 
+    Tareas[num].TiempoTerminado = ((Date.now() - Tareas[num].TiempoCreado)/1000).toFixed(1);
+}
+
+tareaMasRapida = () =>
+{
+    let auxNum = 0;
+    let auxTar = null;
+    Tareas.forEach(t => {
+
+        if(t.Check)
+        {
+            if(auxNum == 0)
+            {
+                auxNum = t.TiempoTerminado;
+                auxTar = t.Nombre
+            }
+            if(t.TiempoTerminado < auxNum)
+            {
+                auxNum = t.TiempoTerminado
+                auxTar = t.Nombre
+                
+            }
+        }
+        console.log(t.TiempoTerminado,t.Nombre)
+    });
+    document.getElementById("tareaMasRapida").innerHTML =`La tarea mas rapida en resolverse fue: ${auxTar}, con ${auxNum} segundos`
 }
 
 MostrarHtml = () =>
