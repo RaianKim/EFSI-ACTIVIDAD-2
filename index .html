@@ -9,17 +9,20 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="input-group mb-3">
-        <input type="text" id="textoTarea" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Escribi lo que tenes q hacer aca">
-        <button class="input-group-text" onclick="Agregar()">Agregar</button>
+    <div class="input-group">
+        <input type="text" id="textoTarea" class="inputText" placeholder="Escribi lo que tenes q hacer aca">
+        <button class="inputBttn" onclick="Agregar()">Agregar</button>
     </div>
-    <div class="form-check" id="ListaDeTareas">
-        <ul id="tareas-ul">
+    <div id="ListaDeTareas">
+        <ul id="tareas-ul" class="tareas-ul">
         </ul>
         </label>
     </div>
-    <div class="input-group mb-3">
-        <button class="input-group-text" onclick="tareaMasRapida()">Tarea mas rapida en hacer</button>
+    <div>
+        <div class="bttns">
+            <button class="input-group-text bttnRapida" onclick="tareaMasRapida()">Tarea mas rapida en hacer</button>
+            <button class="input-group-text bttnBorrar" onclick="BorrarLista()">Borrar todo</button>
+        </div>
         <div id="tareaMasRapida"></div>
     </div>
     

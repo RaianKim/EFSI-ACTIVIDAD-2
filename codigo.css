@@ -1,4 +1,81 @@
+html
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.inputText
+{
+    width: 400px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-style: solid;
+    border-color: black;
+    margin-right: 10px;
+    padding: 10px;
+    border-width: 2px;
+}
+.inputBttn
+{
+    border-style: solid;
+    border-color: black;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-color: rgb(30, 153, 30);
+    color: white;
+    border-width: 2px;
+}
+.tareas-ul
+{
+    margin-top: 10px;
+    margin-left:-30px !important;
+}
+
 li
 {
     list-style: none;
+}
+.divTarea
+{
+    margin-left: 0;
+    display: flex;
+    border: 2px solid black;
+    flex-direction: row;
+    border-radius: 25px;
+    align-items: center ;
+    height: 100px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+.divTarea p
+{
+    margin-bottom: 3.5px;
+    padding-left: 10px;
+}
+.bttnRapida
+{
+    border-style: solid;
+    border-color: black;
+    border-radius: 25px;
+    background-color: rgb(30, 153, 30);
+    color: white;
+    border-width: 2px;
+    padding: 10px;
+}
+.bttnBorrar
+{
+    border-style: solid;
+    border-color: black;
+    border-radius: 25px;
+    color: white;
+    background-color: red;
+    border-width: 2px;
+    padding: 10px;
+}
+.bttns
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
